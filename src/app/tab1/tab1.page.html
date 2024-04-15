@@ -1,17 +1,17 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Pesquisa GitHub
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+  <ion-card>
+    <ion-card-content class="content">
+      <ion-input class="pesquisaInput" fill="outline" placeholder="Digite um perfil válido no github" ></ion-input>
+      <ion-button class="pesquisaButton">Pesquisar</ion-button> 
+    </ion-card-content>
+  </ion-card>
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
