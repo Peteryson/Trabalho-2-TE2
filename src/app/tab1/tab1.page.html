@@ -9,9 +9,28 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     <ion-card-content class="content">
-      <ion-input class="pesquisaInput" fill="outline" placeholder="Digite um perfil válido no github" ></ion-input>
-      <ion-button class="pesquisaButton">Pesquisar</ion-button> 
+      <ion-input class="pesquisaInput" fill="outline" placeholder="Digite um perfil válido no github"
+        [(ngModel)]="username"></ion-input>
+      <ion-button (click)="onSearch()" class="pesquisaButton">Pesquisar</ion-button>
     </ion-card-content>
   </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-avatar aria-hidden="true" slot="start">
+          <img alt="" src="{{retornoApi.avatar_url}}" />
+        </ion-avatar>
+      </ion-item>
+
+      <ion-item>
+        <ion-text [textContent]="retornoApi ? retornoApi.name : ''"></ion-text>
+      </ion-item>
+      <ion-item>
+        <ion-text [textContent]="retornoApi ? retornoApi.bio : ''"></ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
